@@ -1164,10 +1164,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5c72fe4755749fbb8908782357913b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 896584725}
   fadeDuration: 0.8
+  hideOnAwake: 1
+  controlBlockRaycasts: 1
+  controlInteractable: 1
   prevButton: {fileID: 1402835387}
   nextButton: {fileID: 890257948}
-  canvasGroup: {fileID: 896584725}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,6 +1266,8 @@ GameObject:
   - component: {fileID: 965783132}
   - component: {fileID: 965783134}
   - component: {fileID: 965783133}
+  - component: {fileID: 965783136}
+  - component: {fileID: 965783135}
   m_Layer: 5
   m_Name: Panel - Logs
   m_TagString: Untagged
@@ -1329,6 +1334,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 965783131}
   m_CullTransparentMesh: 1
+--- !u!114 &965783135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965783131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33105e29406cfe84ca6727be1e891649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 965783136}
+  fadeDuration: 1
+  hideOnAwake: 1
+  controlBlockRaycasts: 1
+  controlInteractable: 1
+  logs:
+  - {fileID: 663951694}
+  - {fileID: 1700514739}
+  - {fileID: 498239890}
+  - {fileID: 180134043}
+  - {fileID: 816731282}
+  - {fileID: 1666414679}
+  wait: 1.4
+  minDuration: 0.2
+  maxDuration: 1
+--- !u!225 &965783136
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965783131}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &992202978
 GameObject:
   m_ObjectHideFlags: 0
@@ -1712,9 +1756,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1220861280}
-  - component: {fileID: 1220861281}
+  - component: {fileID: 1220861282}
   m_Layer: 5
-  m_Name: System Log Panel
+  m_Name: Rect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1746,28 +1790,18 @@ RectTransform:
   m_AnchoredPosition: {x: 60, y: 160}
   m_SizeDelta: {x: 400, y: 320}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1220861281
-MonoBehaviour:
+--- !u!225 &1220861282
+CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220861279}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33105e29406cfe84ca6727be1e891649, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  logs:
-  - {fileID: 663951694}
-  - {fileID: 1700514739}
-  - {fileID: 498239890}
-  - {fileID: 180134043}
-  - {fileID: 816731282}
-  - {fileID: 1666414679}
-  wait: 1.4
-  minDuration: 0.2
-  maxDuration: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1297936871
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,6 +1814,7 @@ GameObject:
   - component: {fileID: 1297936874}
   - component: {fileID: 1297936873}
   - component: {fileID: 1297936875}
+  - component: {fileID: 1297936876}
   m_Layer: 5
   m_Name: Panel - Unity
   m_TagString: Untagged
@@ -1859,6 +1894,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 182a765e153a66b4eb260c83fa2de7c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 1297936876}
+  fadeDuration: 1
+  hideOnAwake: 0
+  controlBlockRaycasts: 1
+  controlInteractable: 1
   QuitApp: 1
   blackLogo: {fileID: 1194324050}
   whiteLogo: {fileID: 1069052162}
@@ -1867,6 +1907,18 @@ MonoBehaviour:
   interval: 2
   whiteDuration: 2
   fadeOut: 0.6
+--- !u!225 &1297936876
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297936871}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1402835385
 GameObject:
   m_ObjectHideFlags: 0
@@ -2479,9 +2531,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91f2383db9a640efbf60fa4633ea41eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  logoFade: {fileID: 1297936875}
-  logger: {fileID: 1220861281}
-  language: {fileID: 896584726}
+  registries:
+  - name: "\uC2DC\uC2A4\uD15C \uBA54\uC2DC\uC9C0"
+    order: 0
+    method: 1
+    panel: {fileID: 965783135}
+  - name: "\uC720\uB2C8\uD2F0 \uC2A4\uD50C\uB798\uC2DC \uB300\uAE30"
+    order: 1
+    method: 2
+    panel: {fileID: 1297936875}
+  - name: "\uC5B8\uC5B4 \uC124\uC815"
+    order: 2
+    method: 2
+    panel: {fileID: 896584726}
 --- !u!1 &1805844746
 GameObject:
   m_ObjectHideFlags: 0

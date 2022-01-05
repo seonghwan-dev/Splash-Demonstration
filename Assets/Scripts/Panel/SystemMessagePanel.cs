@@ -7,24 +7,28 @@ namespace Splash
     /// 시스템 로그 출력
     /// @TODO :: 동적 생성으로 변경
     /// </summary>
-    public class SystemLogPrint : MonoBehaviour
+    internal class SystemMessagePanel : Panel
     {
+        [Header(nameof(SystemMessagePanel))]
         public GameObject[] logs;
 
         public float wait = 1.4f;
         public float minDuration = 0.2f;
         public float maxDuration = 1.0f;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
+            
             foreach (GameObject log in logs)
             {
                 log.SetActive(false);
             }
         }
 
-        public IEnumerator Load()
+        public override IEnumerator Sequence()
         {
+            yield return Show();
             yield return new WaitForSeconds(wait);
 
             for (int i = 0; i < logs.Length; i++)

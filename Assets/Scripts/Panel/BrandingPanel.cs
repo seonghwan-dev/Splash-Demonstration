@@ -4,8 +4,9 @@ using UnityEngine.UI;
 
 namespace Splash
 {
-	public class LogoFade : MonoBehaviour
+	internal class BrandingPanel : Panel
 	{
+		[Header(nameof(BrandingPanel))]
 		public bool QuitApp = true;
 		
 		public Image blackLogo;
@@ -17,7 +18,7 @@ namespace Splash
 		public float whiteDuration = 2.0f;
 		public float fadeOut = 1.0f;
 
-		public IEnumerator Load()
+		public override IEnumerator Sequence()
 		{
 			var transparent = Color.black;
 			transparent.a = 0;
@@ -29,6 +30,7 @@ namespace Splash
 
 			Color color = Color.white;
 
+			// yield return Show();
 			float elpased = 0f;
 			while (elpased < blackDuration)
 			{
@@ -80,11 +82,6 @@ namespace Splash
 			whiteLogo.color = transparent;
 			
 			yield return new WaitForSeconds(interval);
-			
-			// LanguageSelector.inst.gameObject.SetActive(true);
-			// LanguageSelector.inst.Show();
-			
-			// Application.Quit(0);
 		}
 	}
 }

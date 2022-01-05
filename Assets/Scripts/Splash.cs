@@ -1,14 +1,12 @@
-using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 namespace Splash
 {
 	public class Splash : MonoBehaviour
 	{
-		public LogoFade logoFade;
-		public SystemLogPrint logger;
-		public PanelLanguage language;
+		[SerializeField] internal Panel.Registry[] registries;
 		
 		private void Update()
 		{
@@ -20,11 +18,18 @@ namespace Splash
 
 		private IEnumerator Start()
 		{
-			StartCoroutine(logger.Load());
-			yield return logoFade.Load();
-			// yield return logger.Load();
-
-			yield return language.Load();
+			var sorted = registries.OrderBy(e => e.order);
+			foreach (Panel.Registry registry in sorted)
+			{
+				if (registry.method == Panel.Registry.EMethod.Execute)
+				{
+					StartCoroutine(registry.panel.Sequence());
+				}
+				else if (registry.method == Panel.Registry.EMethod.Await)
+				{
+					yield return registry.panel.Sequence();
+				}
+			}
 		}
 	}
 }

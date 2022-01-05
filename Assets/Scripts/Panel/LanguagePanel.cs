@@ -1,19 +1,15 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
 namespace Splash
 {
-	public class PanelLanguage : UIBehaviour
+	internal class LanguagePanel : Panel
 	{
-		public float fadeDuration = 0.8f;
-		
+		[Header(nameof(LanguagePanel))]
 		public Button prevButton;
 		public Button nextButton;
-		
-		public CanvasGroup canvasGroup;
 
 		private int index;
 		private int localeCount;
@@ -27,24 +23,12 @@ namespace Splash
 			canvasGroup.interactable = false;
 		}
 
-		public IEnumerator Load()
+		public override IEnumerator Sequence()
 		{
 			// Wait for the localization system to initialize
 			yield return LocalizationSettings.InitializationOperation;
 
-			float elpased = 0f;
-			while (elpased < fadeDuration)
-			{
-				canvasGroup.alpha = elpased / fadeDuration;
-				
-				elpased += Time.deltaTime;
-				yield return null;
-			}
-			
-			canvasGroup.alpha = 1;
-			
-			canvasGroup.blocksRaycasts = true;
-			canvasGroup.interactable = true;
+			yield return Show();
 
 			// Generate list of available Locales
 			index = 0;
@@ -58,8 +42,6 @@ namespace Splash
 					index = i;
 					break;
 				}
-				
-				// options.Add(new TMP_Dropdown.OptionData(locale.name));
 			}
 			
 			prevButton.onClick.AddListener(OnPrev);
