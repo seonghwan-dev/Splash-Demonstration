@@ -16,7 +16,12 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: cc04788b39bc2d44caa68514637e134f
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: fcba3cc5bc16e4c4a9e9a4bd5096e809
+    m_Address: Flags_UK
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 0d312d82933c28244bcdd43491adbd20, type: 2}
   m_SchemaSet:

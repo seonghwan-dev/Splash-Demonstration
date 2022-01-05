@@ -39,6 +39,10 @@ MonoBehaviour:
     m_Key: SampleScene/Canvas/Panel/System Log Panel/Text (TMP) (5)
     m_Metadata:
       m_Items: []
+  - m_Id: 277736195031040
+    m_Key: Splash/Canvas/Panel/Text (TMP)
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

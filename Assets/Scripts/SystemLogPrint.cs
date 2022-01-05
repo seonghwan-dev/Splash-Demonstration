@@ -23,7 +23,7 @@ namespace Splash
             }
         }
 
-        private IEnumerator Start()
+        public IEnumerator Load()
         {
             yield return new WaitForSeconds(wait);
 

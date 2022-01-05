@@ -14,9 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TableCollectionName: Splah
   m_TableCollectionNameGuidString: 8dc990ddf100ef240a49a4945e61432e
-  m_Entries: []
+  m_Entries:
+  - m_Id: 277342123393024
+    m_Key: Splash/Canvas/Panel/Image
+    m_Metadata:
+      m_Items: []
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 7678826585331597427
   m_KeyGenerator:
     rid: 7678826585331597349
   references:
@@ -26,3 +31,13 @@ MonoBehaviour:
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
         m_CustomEpoch: 1641308892641
+    - rid: 7678826585331597427
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 277342123393024
+          m_TableCodes:
+          - en
+          - ko
+        m_TypeString: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null

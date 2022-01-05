@@ -17,7 +17,7 @@ namespace Splash
 		public float whiteDuration = 2.0f;
 		public float fadeOut = 1.0f;
 
-		private IEnumerator Start()
+		public IEnumerator Load()
 		{
 			var transparent = Color.black;
 			transparent.a = 0;
@@ -81,8 +81,8 @@ namespace Splash
 			
 			yield return new WaitForSeconds(interval);
 			
-			LanguageSelector.inst.gameObject.SetActive(true);
-			LanguageSelector.inst.Show();
+			// LanguageSelector.inst.gameObject.SetActive(true);
+			// LanguageSelector.inst.Show();
 			
 			// Application.Quit(0);
 		}

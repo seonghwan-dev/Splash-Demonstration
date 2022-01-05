@@ -3,12 +3,37 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="$PROJECT_DIR$/../Portfolio/AutoChessFramework/ACF.Unity/Assets/Scripts/Runtime/Client/Architecture/AssetDownloader.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Portfolio/AutoChessFramework/ACF.Unity/Assets/Scripts/Runtime/Client/Game/Effect/OutlineSystem.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/Assets/Scripts/LanguageSelector.cs">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/Assets/Scripts/LogoFade.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Assets/Scripts/NewBehaviourScript.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Assets/Scripts/PanelLanguage.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Assets/Scripts/Splash.cs">
           <value>
             <set />
           </value>
